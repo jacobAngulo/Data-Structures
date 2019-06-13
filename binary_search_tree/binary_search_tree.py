@@ -38,12 +38,3 @@ class BinarySearchTree:
         cb(self.value)
         if self.right:
             self.right.for_each(cb)
-
-
-bst = BinarySearchTree(5)
-
-bst.insert(2)
-bst.insert(3)
-bst.insert(7)
-
-print(bst.contains(7))
