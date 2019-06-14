@@ -21,16 +21,21 @@ class Heap:
         return len(self.storage)
 
     def _bubble_up(self, index):
+        while index >= 0 and self.storage[index] > self.storage[(index - 1) // 2]:
+            self.storage[index], self.storage[(
+                index - 1) // 2] = self.storage[(index - 1) // 2], self.storage[index]
+            index = (index - 1) // 2
         # if self.storage[index // 2]:
-        if self.storage[index // 2] < self.storage[index]:
-            temp = self.storage[index]
-            self.storage[index] = self.storage[index // 2]
-            self.storage[index // 2] = temp
-            if ((index // 2) // 2) >= 0:
-                if self.storage[(index // 2) // 2] < self.storage[index // 2]:
-                    self._bubble_up(index // 2)
-            else:
-                self._sift_down(index)
+        # if self.storage[index // 2] < self.storage[index]:
+        #     temp = self.storage[index]
+        #     self.storage[index] = self.storage[index // 2]
+        #     self.storage[index // 2] = temp
+        #     if ((index // 2) // 2) >= 0:
+        #         if self.storage[(index // 2) // 2] < self.storage[index // 2]:
+        #             self._bubble_up(index // 2)
+        # else:
+        #     self._sift_down(index)
+        pass
 
     def _sift_down(self, index):
         if ((index * 2) + 1) < len(self.storage):
